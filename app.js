@@ -7,15 +7,15 @@ function createTask() {
   <div class="todo__task">
     <button class="todo__btn todo__btn-done btn-green btn" >Done</button> 
     <p class="todo__text">${taskText}</p>
-    <button class="todo__btn todo__btn-remove btn-red btn" onclick="taskRemove()">Remove</button>
+    <button class="todo__btn todo__btn-remove btn-red btn">Remove</button>
   </div>
   `
   );
 
   const todoText = document.querySelectorAll(".todo__text");
-  console.log(todoText);
+  // console.log(todoText);
   const todoBtnDone = document.querySelectorAll(".todo__btn-done");
-  console.log(todoBtnDone);
+  // console.log(todoBtnDone);
 
   todoBtnDone.forEach((item, i) => {
     const thisTodoText = todoText[i];
@@ -26,17 +26,17 @@ function createTask() {
     });
   });
 
-  function taskRemove() {
-    let todoTask = document.querySelectorAll(".todo__task");
-    let todoBtnRemove = document.querySelectorAll(".todo__btn-remove");
+  let todoTask = document.querySelectorAll(".todo__task");
+  // console.log(todoTask);
+  let todoBtnRemove = document.querySelectorAll(".todo__btn-remove");
+  // console.log(todoBtnRemove);
 
-    todoBtnRemove.forEach((item, i) => {
-      const thisTodoTask = todoTask[i];
+  todoBtnRemove.forEach((item, i) => {
+    const thisTodoTask = todoTask[i];
 
-      thisTodoTask.addEventListener("click", () => {
-        thisTodoTask.remove();
-        return;
-      });
+    todoBtnRemove[i].addEventListener("click", () => {
+      thisTodoTask.remove();
+      return;
     });
-  }
+  });
 }
