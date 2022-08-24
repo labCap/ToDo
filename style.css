@@ -115,12 +115,32 @@ button {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.todo__top-text {
+.todo__info {
+  width: 100%;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
 }
+
+.error {
+  color: #ff5b3e;
+
+  animation: error-anim 0.2s ease 1;
+}
+
+@keyframes error-anim {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 .todo__input {
   background: #252525;
   height: 50px;
